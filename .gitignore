@@ -1,1 +1,5 @@
 *.qmd
+.DS_Store
+img
+/.luarc.json
+_extensions/
