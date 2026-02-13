@@ -2236,12 +2236,13 @@ font-family: inherit;
   <li><a href="#システム要件" id="toc-システム要件" class="nav-link active" data-scroll-target="#システム要件"><span class="header-section-number">1</span> システム要件</a></li>
   <li><a href="#前準備" id="toc-前準備" class="nav-link" data-scroll-target="#前準備"><span class="header-section-number">2</span> 前準備</a>
   <ul class="collapse">
-  <li><a href="#dockerアカウントの作成とログイン" id="toc-dockerアカウントの作成とログイン" class="nav-link" data-scroll-target="#dockerアカウントの作成とログイン"><span class="header-section-number">2.1</span> Dockerアカウントの作成とログイン</a>
+  <li><a href="#dockerのインストール" id="toc-dockerのインストール" class="nav-link" data-scroll-target="#dockerのインストール"><span class="header-section-number">2.1</span> Dockerのインストール</a></li>
+  <li><a href="#dockerアカウントの作成とログイン" id="toc-dockerアカウントの作成とログイン" class="nav-link" data-scroll-target="#dockerアカウントの作成とログイン"><span class="header-section-number">2.2</span> Dockerアカウントの作成とログイン</a>
   <ul class="collapse">
   <li><a href="#dockerアカウントの作成" id="toc-dockerアカウントの作成" class="nav-link" data-scroll-target="#dockerアカウントの作成">Dockerアカウントの作成</a></li>
   <li><a href="#docker-cliにログイン" id="toc-docker-cliにログイン" class="nav-link" data-scroll-target="#docker-cliにログイン">Docker CLIにログイン</a></li>
   </ul></li>
-  <li><a href="#apptainerのインストール" id="toc-apptainerのインストール" class="nav-link" data-scroll-target="#apptainerのインストール"><span class="header-section-number">2.2</span> Apptainerのインストール</a></li>
+  <li><a href="#apptainerのインストール" id="toc-apptainerのインストール" class="nav-link" data-scroll-target="#apptainerのインストール"><span class="header-section-number">2.3</span> Apptainerのインストール</a></li>
   </ul></li>
   <li><a href="#デプロイ方法" id="toc-デプロイ方法" class="nav-link" data-scroll-target="#デプロイ方法"><span class="header-section-number">3</span> デプロイ方法</a>
   <ul class="collapse">
@@ -2256,7 +2257,7 @@ font-family: inherit;
   <li><a href="#サーバー本体nginxとgunicornの起動" id="toc-サーバー本体nginxとgunicornの起動" class="nav-link" data-scroll-target="#サーバー本体nginxとgunicornの起動"><span class="header-section-number">3.9</span> サーバー本体（NginxとGunicorn）の起動</a></li>
   <li><a href="#外部への公開localtunnelの利用" id="toc-外部への公開localtunnelの利用" class="nav-link" data-scroll-target="#外部への公開localtunnelの利用"><span class="header-section-number">3.10</span> 外部への公開（LocalTunnelの利用）</a></li>
   </ul></li>
-  <li><a href="#困った時は" id="toc-困った時は" class="nav-link" data-scroll-target="#困った時は"><span class="header-section-number">4</span> 困った時は</a>
+  <li><a href="#その他" id="toc-その他" class="nav-link" data-scroll-target="#その他"><span class="header-section-number">4</span> その他</a>
   <ul class="collapse">
   <li><a href="#ディレクトリ構成" id="toc-ディレクトリ構成" class="nav-link" data-scroll-target="#ディレクトリ構成"><span class="header-section-number">4.1</span> ディレクトリ構成</a></li>
   <li><a href="#コマンド集" id="toc-コマンド集" class="nav-link" data-scroll-target="#コマンド集"><span class="header-section-number">4.2</span> コマンド集</a>
@@ -2297,7 +2298,7 @@ font-family: inherit;
     <div>
     <div class="quarto-title-meta-heading">公開</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2026年2月8日</p>
+      <p class="date">2026年2月12日</p>
     </div>
   </div>
   
@@ -2350,8 +2351,9 @@ font-family: inherit;
 </section>
 <section id="前準備" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> 前準備</h1>
+<section id="dockerのインストール" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="dockerのインストール"><span class="header-section-number">2.1</span> Dockerのインストール</h2>
 <!--
-## Dockerのインストール
 :::{.callout-important}
 Dockerのインストールは、ホスト側（自分のPC）とサーバー側どちらも行うこと。
 :::
@@ -2583,8 +2585,9 @@ Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
 </div>
 </div>
 </div>
-<section id="dockerアカウントの作成とログイン" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="dockerアカウントの作成とログイン"><span class="header-section-number">2.1</span> Dockerアカウントの作成とログイン</h2>
+</section>
+<section id="dockerアカウントの作成とログイン" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="dockerアカウントの作成とログイン"><span class="header-section-number">2.2</span> Dockerアカウントの作成とログイン</h2>
 <p>Dockerのイメージをプルするには、Docker Hubアカウントが必要となる。</p>
 <ul>
 <li><a href="https://hub.docker.com" class="external" target="_blank">Docker Hub</a></li>
@@ -2634,8 +2637,8 @@ Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
 <p><code>Password:</code>と表示されるので、パスワードを入力。ログインに成功すると<code>Login Succeeded</code>と表示される。</p>
 </section>
 </section>
-<section id="apptainerのインストール" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="apptainerのインストール"><span class="header-section-number">2.2</span> Apptainerのインストール</h2>
+<section id="apptainerのインストール" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="apptainerのインストール"><span class="header-section-number">2.3</span> Apptainerのインストール</h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -3521,93 +3524,6 @@ main.0a8a106c.css  main.0a8a106c.css.map
 </div>
 <hr>
 <p><code>ls -F</code>で<code>shinshu-fesnav.service</code>が作成されているか確認。</p>
-<!--
-## バックエンドのDockerイメージをSIFファイルに変換
-バックエンドのSIFファイル（＝Apptainerのイメージ）を作成する。
-
-::: {.cell filename='bash'}
-
-```{.bash .cell-code}
-cd ~/shinshu-fesnav
-apptainer build ~/shinshu-fesnav/server.sif \
-    docker://yumachin2003/shinshu-fesnav-backend:v0.9.3
-```
-:::
-
-
-`ls -L`で`server.sif`が作成されているか確認。
-
-## バックエンドのDockerコンテナの起動
-
-まずは起動スクリプトを作成する。Nanoエディタを開き、以下を入力し、保存。Nanoエディタの操作については[3.2 環境変数ファイルの設定](#環境変数ファイルの設定)の項を参照。
-
-***
-
-::: {.cell filename='~/shinshu-fesnav/start.sh'}
-
-```{.bash .cell-code  code-fold="true" code-summary="起動スクリプト（start.sh）" code-line-numbers="true"}
-#!/bin/bash
-
-# 設定: インスタンス名とイメージ名
-INSTANCE_NAME="shinshu-fesnav"
-IMAGE_NAME="server.sif"
-
-echo "--- 🚀 Starting $INSTANCE_NAME deployment ---"
-
-# 1. 既存のインスタンスを停止
-echo "Stopping existing instance (if any)..."
-apptainer instance stop $INSTANCE_NAME 2>/dev/null
-
-# 2. 必要なディレクトリとファイルの準備
-echo "Preparing directories..."
-mkdir -p instance
-touch server.log
-
-# 3. インスタンスの開始
-echo "Starting Apptainer instance..."
-apptainer instance start \
-  --bind $PWD/react_static:/app/client_build \
-  --bind $PWD/server.crt:/app/server.crt \
-  --bind $PWD/server.key:/app/server.key \
-  --bind $PWD/.env.local:/app/.env.local \
-  --bind $PWD/instance:/app/instance \
-  $IMAGE_NAME $INSTANCE_NAME
-
-# 4. Gunicornの実行
-echo "Executing Gunicorn in background..."
-apptainer exec instance://$INSTANCE_NAME \
-  sh -c "cd /app && \
-    set -a && . ./.env && set +a && \
-    export STATIC_FOLDER=/app/client_build && \
-    export FLASK_ENV=production && \
-    nohup gunicorn \
-      --workers 4 \
-      --bind 0.0.0.0:5051 \
-      --certfile=/app/server.crt \
-      --keyfile=/app/server.key \
-      'app:create_app()' \
-      > \$PWD/server.log 2>&1 &"
-
-echo "--- ✅ Deployment command sent ---"
-echo "Check logs with: tail -f server.log"
-```
-:::
-
-
-***
-
-保存できたらスクリプトを実行する。
-
-::: {.cell filename='bash'}
-
-```{.bash .cell-code}
-~/shinshu-fesnav/start.sh
-```
-:::
-
-
-`tail -f server.log`でGunicornサーバーのログが確認できる。`-f`オプションは常時追跡であり、ログが更新されると自動的に表示される。`Ctrl+C`で終了。
--->
 </section>
 <section id="サーバー本体nginxとgunicornの起動" class="level2" data-number="3.9">
 <h2 data-number="3.9" class="anchored" data-anchor-id="サーバー本体nginxとgunicornの起動"><span class="header-section-number">3.9</span> サーバー本体（NginxとGunicorn）の起動</h2>
@@ -3761,21 +3677,181 @@ echo "Check logs with: tail -f server.log"
 </div>
 </section>
 </section>
-<section id="困った時は" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> 困った時は</h1>
+<section id="その他" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> その他</h1>
 <section id="ディレクトリ構成" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="ディレクトリ構成"><span class="header-section-number">4.1</span> ディレクトリ構成</h2>
+<p>デプロイ完了時のディレクトリの概要を示す。</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>~/</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>├── shinshu-fesnav</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>│   ├── .env</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>│   ├── build_frontend.sh</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>│   ├── certs</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>│   │   ├── server.crt</span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>│   │   └── server.key</span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>│   ├── nginx.conf</span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>│   ├── react_static</span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>│   │   ├── index.html</span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>│   │   ├── robots.txt</span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>│   │   └── static</span>
+<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a>│   │       ├── css</span>
+<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a>│   │       │   └── ...</span>
+<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a>│   │       ├── js</span>
+<span id="cb42-16"><a href="#cb42-16" aria-hidden="true" tabindex="-1"></a>│   │       │   └── ...</span>
+<span id="cb42-17"><a href="#cb42-17" aria-hidden="true" tabindex="-1"></a>│   │       └── media</span>
+<span id="cb42-18"><a href="#cb42-18" aria-hidden="true" tabindex="-1"></a>│   │           └── ...</span>
+<span id="cb42-19"><a href="#cb42-19" aria-hidden="true" tabindex="-1"></a>│   ├── server.sif</span>
+<span id="cb42-20"><a href="#cb42-20" aria-hidden="true" tabindex="-1"></a>│   ├── show_logs.sh</span>
+<span id="cb42-21"><a href="#cb42-21" aria-hidden="true" tabindex="-1"></a>│   └── start_server.sh</span>
+<span id="cb42-22"><a href="#cb42-22" aria-hidden="true" tabindex="-1"></a>└── .config</span>
+<span id="cb42-23"><a href="#cb42-23" aria-hidden="true" tabindex="-1"></a>    └── systemd</span>
+<span id="cb42-24"><a href="#cb42-24" aria-hidden="true" tabindex="-1"></a>        └── user</span>
+<span id="cb42-25"><a href="#cb42-25" aria-hidden="true" tabindex="-1"></a>            └── shinshu-fesnav.service</span>
+<span id="cb42-26"><a href="#cb42-26" aria-hidden="true" tabindex="-1"></a>...</span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 <section id="コマンド集" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="コマンド集"><span class="header-section-number">4.2</span> コマンド集</h2>
 <section id="linux" class="level3">
 <h3 class="anchored" data-anchor-id="linux">Linux</h3>
+<p>WSL (Ubuntu) 上での操作や、サーバープロセスの管理に必要なコマンドの詳細解説。</p>
+<section id="ファイルディレクトリ操作" class="level4">
+<h4 class="anchored" data-anchor-id="ファイルディレクトリ操作">ファイル・ディレクトリ操作</h4>
+<p><strong><code>ls</code></strong> : ファイルやディレクトリの一覧を表示 - <code>-F</code> : ファイル名の後ろに記号を付与して種類を区別する（<code>/</code>: ディレクトリ, <code>*</code>: 実行ファイル, <code>@</code>: リンク）。 - <code>-a</code> : 隠しファイル（<code>.</code>で始まるファイル。<code>.env</code>など）も含めてすべて表示する。 - <code>-l</code> : 詳細情報（権限、所有者、ファイルサイズ、更新日時）をリスト形式で表示する。 - <strong>例</strong>: <code>ls -laF</code> （隠しファイルを含むすべてのファイルを詳細表示）</p>
+<p><strong><code>cd</code></strong> : カレントディレクトリ（現在いるフォルダ）を移動 - オプションはあまり使わないが、以下のパス指定を覚えておくと便利。 - <code>~</code> : ホームディレクトリ（<code>/home/&lt;ユーザー名&gt;</code>）へ移動。 - <code>..</code> : 一つ上の階層へ移動。 - <code>-</code> : 直前にいたディレクトリに戻る。 - <strong>例</strong>: <code>cd ~/shinshu-fesnav</code> （ホームにあるプロジェクトフォルダへ移動）</p>
+<p><strong><code>mkdir</code></strong> : 新しいディレクトリを作成 - <code>-p</code> : 指定したパスの途中にあるディレクトリが存在しない場合、それらもまとめて作成する（エラーにならない）。 - <strong>例</strong>: <code>mkdir -p logs/nginx</code> （logsフォルダがなくても、logsを作り、その中にnginxフォルダを作る）</p>
+<p><strong><code>cp</code></strong> : ファイルやディレクトリをコピー - <code>-r</code> : ディレクトリの中身も含めて再帰的にコピーする（ディレクトリコピー時は必須）。 - <code>-p</code> : 元ファイルの属性（更新日時や権限）を保持したままコピーする。 - <strong>例</strong>: <code>cp -rp react_static react_static_backup</code> （フォルダを丸ごとバックアップ）</p>
+<p><strong><code>rm</code></strong> : ファイルやディレクトリを削除 - <code>-r</code> : ディレクトリの中身も含めて再帰的に削除する。 - <code>-f</code> : 警告メッセージを出さずに強制的に削除する。 - <strong>注意</strong>: <code>rm -rf</code> は確認なしに完全削除するため、使用には十分注意すること。</p>
+<p><strong><code>chmod</code></strong> : ファイルの権限（パーミッション）を変更 - <code>+x</code> : 実行権限を付与する（シェルスクリプトなどを実行可能にする）。 - <code>600</code> : 所有者のみ読み書き可能にする（鍵ファイル <code>server.key</code> などで使用）。 - <code>755</code> : 所有者は読み書き実行、他は読み取り実行のみ可能にする（一般的な公開ディレクトリなど）。 - <strong>例</strong>: <code>chmod +x start_server.sh</code></p>
+</section>
+<section id="システムプロセス管理" class="level4">
+<h4 class="anchored" data-anchor-id="システムプロセス管理">システム・プロセス管理</h4>
+<p><strong><code>systemctl --user</code></strong> : ユーザー権限でのサービス管理 - <strong>重要</strong>: 本環境では管理者権限（sudo）を使わずユーザーモードで動かすため、必ず <code>--user</code> を付ける。 - <code>start &lt;サービス名&gt;</code> : サービスを起動する。 - <code>stop &lt;サービス名&gt;</code> : サービスを停止する。 - <code>restart &lt;サービス名&gt;</code> : サービスを再起動する（設定変更の反映など）。 - <code>status &lt;サービス名&gt;</code> : サービスの稼働状況（Active: active (running) かどうか）や直近のログを確認する。 - <code>daemon-reload</code> : <code>.service</code> ファイルを書き換えた後に設定を再読み込みする。</p>
+<p><strong><code>journalctl --user</code></strong> : ユーザーサービスのログを確認 - <code>-u &lt;サービス名&gt;</code> : 特定のサービスのログのみを表示する。 - <code>-f</code> : ログの末尾をリアルタイムで監視（追跡）する。<code>Ctrl+C</code> で終了。 - <code>-n &lt;行数&gt;</code> : 最新の指定した行数だけを表示する。 - <strong>例</strong>: <code>journalctl --user -u shinshu-fesnav -f -n 50</code> （最新50行を表示しつつ、リアルタイム監視）</p>
+<p><strong><code>lsof</code></strong> : 開いているファイルやポートを確認 - <code>-i :&lt;ポート番号&gt;</code> : 指定したポート番号を使っているプロセスを表示する。ポート競合（Address already in use）の調査に使う。 - <strong>例</strong>: <code>lsof -i :5051</code> （5051番ポートを使用中のプロセスを探す）</p>
+</section>
+<section id="ネットワークその他" class="level4">
+<h4 class="anchored" data-anchor-id="ネットワークその他">ネットワーク・その他</h4>
+<p><strong><code>curl</code></strong> : URLにアクセスしてデータを送受信 - <code>-O</code> : ダウンロードした内容を、URLのファイル名そのままで保存する。 - <code>-I</code> : ヘッダー情報のみを取得する（サーバーが動いているか簡易確認するのに便利）。 - <code>inet-ip.info</code> : 自分のグローバルIPアドレスを返すWebサービス。 - <strong>例</strong>: <code>curl inet-ip.info</code> （現在のグローバルIPを確認）</p>
+<p><strong><code>nano</code></strong> : ターミナル内で動くテキストエディタ - オプションではないが、以下のショートカットキーが必須。 - <code>Ctrl+O</code> : 保存（Write Out）。 - <code>Ctrl+X</code> : 終了（Exit）。保存していない変更がある場合、保存するか聞かれる（Y/N）。 - <code>Ctrl+W</code> : 文字列検索（Where Is）。</p>
+</section>
 </section>
 <section id="docker" class="level3">
 <h3 class="anchored" data-anchor-id="docker">Docker</h3>
+<p>データベース（MySQL）コンテナの操作や、イメージ管理に関するコマンド。</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">目的</th>
+<th style="text-align: left;">コマンド</th>
+<th style="text-align: left;">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>コンテナ一覧</strong></td>
+<td style="text-align: left;"><code>docker ps -a</code></td>
+<td style="text-align: left;">起動中および停止中の全コンテナを表示する。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>コンテナ起動</strong></td>
+<td style="text-align: left;"><code>docker start &lt;コンテナ名&gt;</code></td>
+<td style="text-align: left;">停止しているコンテナを起動する（例: <code>docker start shinshu-fesnav-db</code>）。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>コンテナ停止</strong></td>
+<td style="text-align: left;"><code>docker stop &lt;コンテナ名&gt;</code></td>
+<td style="text-align: left;">起動中のコンテナを停止する。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>コンテナ再起動</strong></td>
+<td style="text-align: left;"><code>docker restart &lt;コンテナ名&gt;</code></td>
+<td style="text-align: left;">コンテナを再起動する。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>コンテナログ確認</strong></td>
+<td style="text-align: left;"><code>docker logs -f &lt;コンテナ名&gt;</code></td>
+<td style="text-align: left;">コンテナの内部ログをリアルタイム表示する。DB接続エラー時の調査に有効。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>コンテナに入る</strong></td>
+<td style="text-align: left;"><code>docker exec -it &lt;コンテナ名&gt; bash</code></td>
+<td style="text-align: left;">起動中のコンテナ内部のシェルに入る。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>イメージ一覧</strong></td>
+<td style="text-align: left;"><code>docker images</code></td>
+<td style="text-align: left;">ダウンロード済みのDockerイメージ一覧を表示する。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>不要データの削除</strong></td>
+<td style="text-align: left;"><code>docker system prune</code></td>
+<td style="text-align: left;">停止中のコンテナや使われていないネットワークを一括削除して容量を空ける。</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="mysql" class="level3">
 <h3 class="anchored" data-anchor-id="mysql">MySQL</h3>
+<p>Dockerコンテナ内のMySQLを操作するためのコマンドおよびSQLクエリ。</p>
+<p><strong>1. Docker内のMySQLへのログイン</strong></p>
+<p>WSL上から直接データベースに接続するコマンド。</p>
+<div class="cell" style="margin-left: 2em;">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> exec <span class="at">-it</span> shinshu-fesnav-db mysql <span class="at">-u</span> root <span class="at">-p</span><span class="st">&quot;</span><span class="va">$MYSQL_PASSWORD</span><span class="st">&quot;</span></span></code></pre></div><button title="コピー" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>2. よく使うSQLクエリ</strong> ログイン後（<code>mysql&gt;</code> プロンプト）で使用する。</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">目的</th>
+<th style="text-align: left;">コマンド（クエリ）</th>
+<th style="text-align: left;">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>DB一覧表示</strong></td>
+<td style="text-align: left;"><code>SHOW DATABASES;</code></td>
+<td style="text-align: left;">サーバー内のデータベース一覧を表示する。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>DB選択</strong></td>
+<td style="text-align: left;"><code>USE fesData;</code></td>
+<td style="text-align: left;">操作対象のデータベースを <code>fesData</code> に切り替える。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>テーブル一覧</strong></td>
+<td style="text-align: left;"><code>SHOW TABLES;</code></td>
+<td style="text-align: left;">選択中のデータベースにあるテーブル一覧を表示する。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>データ確認</strong></td>
+<td style="text-align: left;"><code>SELECT * FROM &lt;テーブル名&gt;;</code></td>
+<td style="text-align: left;">指定したテーブルの全データを表示する（例: <code>SELECT * FROM users;</code>）。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>データ確認（整形）</strong></td>
+<td style="text-align: left;"><code>SELECT * FROM &lt;テーブル名&gt; \G</code></td>
+<td style="text-align: left;">横に長いデータを、縦方向に見やすく表示する。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>終了</strong></td>
+<td style="text-align: left;"><code>EXIT;</code></td>
+<td style="text-align: left;">MySQLの対話モードを終了し、WSLに戻る。</td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 </section>
