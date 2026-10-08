@@ -2561,6 +2561,19 @@ document.addEventListener('DOMContentLoaded', function() {
   <li><a href="#vs-code拡張機能" id="toc-vs-code拡張機能" class="nav-link" data-scroll-target="#vs-code拡張機能"><span class="header-section-number">3.4.2</span> VS Code拡張機能</a></li>
   </ul></li>
   </ul></li>
+  <li><a href="#claudeの危険性" id="toc-claudeの危険性" class="nav-link" data-scroll-target="#claudeの危険性"><span class="header-section-number">4</span> Claudeの危険性</a>
+  <ul>
+  <li><a href="#実社会への誤攻撃リスク" id="toc-実社会への誤攻撃リスク" class="nav-link" data-scroll-target="#実社会への誤攻撃リスク"><span class="header-section-number">4.1</span> 実社会への誤攻撃リスク</a></li>
+  <li><a href="#システム破壊資産流出" id="toc-システム破壊資産流出" class="nav-link" data-scroll-target="#システム破壊資産流出"><span class="header-section-number">4.2</span> システム破壊・資産流出</a></li>
+  <li><a href="#claudeを利用する上で注意すること" id="toc-claudeを利用する上で注意すること" class="nav-link" data-scroll-target="#claudeを利用する上で注意すること"><span class="header-section-number">4.3</span> Claudeを利用する上で注意すること</a>
+  <ul>
+  <li><a href="#autoで放置せずコマンドや変更差分diffを確認する" id="toc-autoで放置せずコマンドや変更差分diffを確認する" class="nav-link" data-scroll-target="#autoで放置せずコマンドや変更差分diffを確認する">1. 「Auto」で放置せず、コマンドや変更差分（diff）を確認する</a></li>
+  <li><a href="#本番環境に触らせないgitでいつでも戻せるようにする" id="toc-本番環境に触らせないgitでいつでも戻せるようにする" class="nav-link" data-scroll-target="#本番環境に触らせないgitでいつでも戻せるようにする">2. 本番環境に触らせない・Gitでいつでも戻せるようにする</a></li>
+  <li><a href="#apiキーや個人情報を読み込ませない" id="toc-apiキーや個人情報を読み込ませない" class="nav-link" data-scroll-target="#apiキーや個人情報を読み込ませない">3. APIキーや個人情報を読み込ませない</a></li>
+  <li><a href="#外部のサイトやネットワークに勝手にアクセスさせない" id="toc-外部のサイトやネットワークに勝手にアクセスさせない" class="nav-link" data-scroll-target="#外部のサイトやネットワークに勝手にアクセスさせない">4. 外部のサイトやネットワークに勝手にアクセスさせない</a></li>
+  <li><a href="#コードを理解せずに丸投げしない" id="toc-コードを理解せずに丸投げしない" class="nav-link" data-scroll-target="#コードを理解せずに丸投げしない">5. コードを理解せずに丸投げしない</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
 </div>
@@ -2585,10 +2598,16 @@ document.addEventListener('DOMContentLoaded', function() {
     <div>
     <div class="quarto-title-meta-heading">公開</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2026年10月7日</p>
+      <p class="date">2026年10月5日</p>
     </div>
   </div>
   
+    <div>
+    <div class="quarto-title-meta-heading">更新日</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">2026年10月8日</p>
+    </div>
+  </div>
     
   </div>
   
@@ -2618,9 +2637,10 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>使用量はチームで共有のため、全員がFableの高エフォートを使い続けると上限にすぐ到達してしまう可能性がある。デフォルトはOpusのMediumを使用するのを遵守し、時と場合に応じたモデル・思考量設定をする必要がある。</p>
+<p>使用量はチームで共有のため、<del>全員がFableの高エフォートを使い続けると上限にすぐ到達してしまう可能性がある。</del>デフォルトはOpusのMediumを使用するのを遵守し、時と場合に応じたモデル・思考量設定をする必要がある。</p>
 </div>
 </div>
+<p><strong>2026年10月8日更新</strong>: Claude Teamの標準シートでは無制限に使用できず、従量課金制となっている。プレミアムシートに限り週次利用上限の最大50%まで追加料金なしで使用できる。</p>
 </section>
 <section id="claude-code" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="claude-code"><span class="header-section-number">1.2</span> Claude Code</h2>
@@ -2967,6 +2987,74 @@ OpenAIに続き、Claudeも研究者向けにチームプランを提供との�
 <p>意図しない変更を防ぐため、基本的には「<iconify-icon role="img" inline icon="tabler:hand-stop" aria-label="Icon hand-stop from tabler Iconify.design set." title="Icon hand-stop from tabler Iconify.design set."></iconify-icon> Manual」のままで作業をすることを推奨する。</p>
 </div>
 </div>
+</section>
+</section>
+</section>
+<section id="claudeの危険性" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Claudeの危険性</h1>
+<blockquote class="blockquote">
+<p>2026年10月8日 追記</p>
+</blockquote>
+<p>Claudeは非常に高い安全性と推論能力を誇る一方、その「高度な自律性」や「開発元であるAnthropic社の運用」に起因する危険性が存在する。</p>
+<section id="実社会への誤攻撃リスク" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="実社会への誤攻撃リスク"><span class="header-section-number">4.1</span> 実社会への誤攻撃リスク</h2>
+<p>Anthropic社がClaudeのサイバーセキュリティ能力をテストしていた際、設定の不備により、本来遮断されているはずのインターネットにClaudeが接続できる状態になっていた。Claudeは「これはシミュレーション環境である」と指示されていたため、ネット上で見つけた実在する外部3組織の本番システムを「演習用ターゲット」だと誤認し、不正アクセスしてしまった<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> 。AI自身が「これはテストだ」と思い込んだまま、人間の想定を超えて現実のシステムに攻撃や侵入を行ってしまうという、自律型AIならではの制御不能リスクが浮き彫りとなった。</p>
+</section>
+<section id="システム破壊資産流出" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="システム破壊資産流出"><span class="header-section-number">4.2</span> システム破壊・資産流出</h2>
+<p>海外のコミュニティサイト（<a href="https://datatalks.club/" target="_blank">DataTalks.Club</a>）の構築中、Claude Codeが同期エラーを起こした際、パニック状態のコマンド処理の末に本番環境のデータベース（10万人以上のユーザーデータ、2.5年分の蓄積）を丸ごと削除してしまう事故が発生した<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> 。また、別のケースではログ経由でAPIトークンが漏洩し、数千万円規模の巨額損失に繋がったインシデントも報告されている<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> 。</p>
+</section>
+<section id="claudeを利用する上で注意すること" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="claudeを利用する上で注意すること"><span class="header-section-number">4.3</span> Claudeを利用する上で注意すること</h2>
+<p>上記のような「AIがテストと本番を勘違いして外部へ侵入してしまう」「エラーでパニックになって全データを削除してしまう」といった事故は、ゼミで開発を行う私たちにとっても他人事ではない。特にClaude Codeはターミナル操作やファイル書き換えを自律して行うため、安全に活用するために以下のポイントを押さえておこう。</p>
+<div class="callout callout-style-default callout-important callout-titled" title="ゼミでのClaudeの利用における3大原則">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">重要</span>ゼミでのClaudeの利用における3大原則
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><strong>本番・重要環境にAIを直接触らせない</strong>: ローカル・Docker環境で動かし、作業前に必ずGitコミット・バックアップを取る</li>
+<li><strong>コマンドと差分の目視確認</strong>: 「Auto」に依存せず、実行コマンドや差分を人間が承認する</li>
+<li><strong>認証情報・機密情報をAIの視界に入れない</strong>: <code>.env</code>等の機密ファイルを<code>.claudeignore</code>で除外する</li>
+</ol>
+</div>
+</div>
+<section id="autoで放置せずコマンドや変更差分diffを確認する" class="level4">
+<h4 class="anchored" data-anchor-id="autoで放置せずコマンドや変更差分diffを確認する">1. 「Auto」で放置せず、コマンドや変更差分（diff）を確認する</h4>
+<div style="margin-left: 2em;">
+<p>「<i class="bi bi-lightning"></i> Auto」実行は便利だが、エラー発生時にAIがパニックを起こして危険なコマンド（<code>rm -rf</code>やテーブル削除など）を連打してしまう恐れがある。前述の通り基本は「<iconify-icon role="img" inline icon="tabler:hand-stop" aria-label="Icon hand-stop from tabler Iconify.design set." title="Icon hand-stop from tabler Iconify.design set."></iconify-icon> Manual」にしておき、<strong>「どんなコマンドを実行しようとしているのか」「どこが書き換わるのか」を自分の目で確認してから許可する</strong>ようにしたい。</p>
+</div>
+</section>
+<section id="本番環境に触らせないgitでいつでも戻せるようにする" class="level4">
+<h4 class="anchored" data-anchor-id="本番環境に触らせないgitでいつでも戻せるようにする">2. 本番環境に触らせない・Gitでいつでも戻せるようにする</h4>
+<ul>
+<li><strong>本番DBやサーバーに直接繋がない</strong>: 開発やテストは必ず自分のPC（ローカル環境）やDocker上で行い、本番環境のデータベースや本番サーバーを直接操作させない。</li>
+<li><strong>作業前にGitでコミットしておく</strong>: AIに指示を出す前にコミットや作業ブランチ作成をしておけば、仮にファイルを無茶苦茶に破壊・削除されてもすぐに元に戻せる。</li>
+</ul>
+</section>
+<section id="apiキーや個人情報を読み込ませない" class="level4">
+<h4 class="anchored" data-anchor-id="apiキーや個人情報を読み込ませない">3. APIキーや個人情報を読み込ませない</h4>
+<ul>
+<li><strong><code>.env</code>などの機密ファイルに注意</strong>: APIキーやパスワードが書かれたファイルをClaudeに安易に読み込ませると、ログなどを通じて流出する危険がある。</li>
+<li><strong><code>.claudeignore</code>や<code>.gitignore</code>を設定する</strong>: 秘密情報や大きなデータは、あらかじめAIの読み込み対象から除外しておく。また、クラウドサービスを使う場合は請求上限やアラートを設定しておくと安心である。</li>
+</ul>
+</section>
+<section id="外部のサイトやネットワークに勝手にアクセスさせない" class="level4">
+<h4 class="anchored" data-anchor-id="外部のサイトやネットワークに勝手にアクセスさせない">4. 外部のサイトやネットワークに勝手にアクセスさせない</h4>
+<div style="margin-left: 2em;">
+<p>スクレイピングやネットワーク通信のコードを動かす際、実在する外部サイトや学内ネットワークをターゲットにしてしまうと、不正アクセスやDoS攻撃とみなされる恐れがある。テスト時はモック（擬似データ）やローカルサーバー（<code>localhost</code>）を使うように徹底したい。</p>
+</div>
+</section>
+<section id="コードを理解せずに丸投げしない" class="level4">
+<h4 class="anchored" data-anchor-id="コードを理解せずに丸投げしない">5. コードを理解せずに丸投げしない</h4>
+<div style="margin-left: 2em;">
+<p>Claudeが書いたコードを「よく分からないけれど動いたからヨシ」とそのまま使うのは危険である。セキュリティ上の問題がないか、なぜそのコードで動くのかを自分で説明できるようにすることが、システム開発を学ぶゼミ生としても大切である。</p>
+</div>
 <!-- -->
 
 </section>
@@ -2978,11 +3066,14 @@ OpenAIに続き、Claudeも研究者向けにチームプランを提供との�
 
 <ol>
 <li id="fn1"><p>本書では、可読性を優先し、LLMも「AI」と表記する。<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>2026年10月7日現在。<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>2026年10月5日現在。<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p><strong>IDE</strong>とは、統合開発環境の略で、ソフトウェア開発に必要なツールを一つにまとめたアプリケーションのこと。<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p><strong>シート</strong>とは、「利用枠（ライセンス）」のことであり、1シート＝1ユーザー分のアカウントとして計算される。<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn5"><p><strong>Cowork</strong>とは、Claudeがユーザーの代わりにWeb検索やブラウザ操作を行ってくれる機能。<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn6"><p><strong>SWE-bench</strong>とは、実際のGitHubの課題を解決する精度を競う世界的なベンチマーク。<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>「<a href="https://exawizards.com/column/ai-trend/news-08-01-2026-2/" target="_blank">安全テストのつもりが本物を攻撃　Claudeはなぜ3社に侵入したのか - AI新聞</a>」より。2026年10月8日閲覧。<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>「<a href="https://www.gizmodo.jp/article/claude-powered-agent-apparently-deletes-company-database-debases-itself-further-in-confession/" target="_blank">AI「間違って全データを消してしまいました。申し訳ありません」 | ギズモード・ジャパン</a>」より。2026年10月8日閲覧。<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>「<a href="https://atmarkit.itmedia.co.jp/ait/articles/2604/28/news037.html" target="_blank">Claude Codeに情報流出の脆弱性　知らぬ間に認証情報を配布する開発者たち：13件に1件の割合でリスク - @IT</a>」より。2026年10月8日閲覧。<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main>
 <!-- /main column -->
@@ -3442,28 +3533,28 @@ OpenAIに続き、Claudeも研究者向けにチームプランを提供との�
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rmarkdown)</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu"># Claudeとは</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="al">![](img/claude-ai-icon.png)</span>{.float-end width=20% style=&quot;margin-left: 15px; margin-top: -3rem;&quot;}</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># Claudeとは</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="al">![](img/claude-ai-icon.png)</span>{.float-end width=20% style=&quot;margin-left: 15px; margin-top: -3rem;&quot;}</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Claude</span><span class="co">](https://claude.ai)</span>{target=&quot;_blank&quot;}（クロード）とは、<span class="co">[</span><span class="ot">Anthropic社</span><span class="co">](https://www.anthropic.com/)</span>{target=&quot;_blank&quot;}が開発した高性能な対話型生成AIおよび大規模言語モデル（LLM）^<span class="co">[</span><span class="ot">本書では、可読性を優先し、LLMも「AI」と表記する。</span><span class="co">]</span>である。元OpenAIの研究者らによって設立されたAnthropic社が「**安全性と信頼性に優れたAIの実現**」を掲げて開発しており、**高度な知性と人間味のある自然な対話能力**を兼ね備えている。</span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Claude</span><span class="co">](https://claude.ai)</span>{target=&quot;_blank&quot;}（クロード）とは、<span class="co">[</span><span class="ot">Anthropic社</span><span class="co">](https://www.anthropic.com/)</span>{target=&quot;_blank&quot;}が開発した高性能な対話型生成AIおよび大規模言語モデル（LLM）^<span class="co">[</span><span class="ot">本書では、可読性を優先し、LLMも「AI」と表記する。</span><span class="co">]</span>である。元OpenAIの研究者らによって設立されたAnthropic社が「**安全性と信頼性に優れたAIの実現**」を掲げて開発しており、**高度な知性と人間味のある自然な対話能力**を兼ね備えている。</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## Claudeのモデル</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>現行^<span class="co">[</span><span class="ot">{{&lt; meta date &gt;}}現在。</span><span class="co">]</span>のClaudeのモデルは以下の通りである。</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>:::{.scroll-gallery}</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="al">![](img/claude-model-fable.png)</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="al">![](img/claude-model-opus.png)</span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="al">![](img/claude-model-sonnet.png)</span></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="al">![](img/claude-model-haiku.png)</span></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">## Claudeのモデル</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>現行^<span class="co">[</span><span class="ot">{{&lt; meta date &gt;}}現在。</span><span class="co">]</span>のClaudeのモデルは以下の通りである。</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>:::{.scroll-gallery}</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="al">![](img/claude-model-fable.png)</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="al">![](img/claude-model-opus.png)</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="al">![](img/claude-model-sonnet.png)</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="al">![](img/claude-model-haiku.png)</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>Fableは一番性能がよく、複雑な処理に向いているが、その分使用量を消費する。逆にHaikuは性能が低いが、応答が早く使用量の消費が少ない。迷ったら**Opus**から試し、速さとコストを重視する処理は**Sonnet**、大量の軽い処理は**Haiku**、Opusでも足りない難題は**Fable**、というのが Anthropic公式の勧めに沿った選び方である。また、それぞれのモデルで思考量（Effort）を選択することができる。</span>
 <span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>Fableは一番性能がよく、複雑な処理に向いているが、その分使用量を消費する。逆にHaikuは性能が低いが、応答が早く使用量の消費が少ない。迷ったら**Opus**から試し、速さとコストを重視する処理は**Sonnet**、大量の軽い処理は**Haiku**、Opusでも足りない難題は**Fable**、というのが Anthropic公式の勧めに沿った選び方である。また、それぞれのモデルで思考量（Effort）を選択することができる。</span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>:::{.callout-important}</span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>使用量はチームで共有のため、全員がFableの高エフォートを使い続けると上限にすぐ到達してしまう可能性がある。デフォルトはOpusのMediumを使用するのを遵守し、時と場合に応じたモデル・思考量設定をする必要がある。</span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>:::{.callout-important}</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>使用量はチームで共有のため、~~全員がFableの高エフォートを使い続けると上限にすぐ到達してしまう可能性がある。~~デフォルトはOpusのMediumを使用するのを遵守し、時と場合に応じたモデル・思考量設定をする必要がある。</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>**{{&lt; meta date-modified &gt;}}更新**: Claude Teamの標準シートでは無制限に使用できず、従量課金制となっている。プレミアムシートに限り週次利用上限の最大50%まで追加料金なしで使用できる。</span>
 <span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="fu">## Claude Code</span></span>
 <span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Claude Code</span><span class="co">](https://claude.com/ja/product/claude-code)</span>{target=&quot;_blank&quot;}は、ターミナルや総合開発環境（IDE）等の開発環境で直接ファイルを編集・実行する自律型コーディングAIエージェントである。AIとコードに関するやり取りを行い修正を提案してくれるだけではなく、ファイルを読み込み、実際に**AIがコードの修正、テスト、デバッグまで自動で**行ってくれる。コードをコピーする必要がなく、複数ファイルとの整合性も考慮してくれるため、開発効率を大幅に向上させることができる。基本的な利用はターミナルからになるが、GUIのデスクトップ版、VS CodeをはじめとしたIDE^[**IDE**とは、統合開発環境の略で、ソフトウェア開発に必要なツールを一つにまとめたアプリケーションのこと。]の拡張機能から使用することができる。</span>
@@ -3707,7 +3798,50 @@ OpenAIに続き、Claudeも研究者向けにチームプランを提供との�
 <span id="cb5-268"><a href="#cb5-268" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-269"><a href="#cb5-269" aria-hidden="true" tabindex="-1"></a>:::{.callout-important}</span>
 <span id="cb5-270"><a href="#cb5-270" aria-hidden="true" tabindex="-1"></a>意図しない変更を防ぐため、基本的には「{{&lt; iconify tabler hand-stop &gt;}} Manual」のままで作業をすることを推奨する。</span>
-<span id="cb5-271"><a href="#cb5-271" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="コピー" class="code-copy-button" data-in-quarto-modal><i class="bi"></i></button></div>
+<span id="cb5-271"><a href="#cb5-271" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-272"><a href="#cb5-272" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-273"><a href="#cb5-273" aria-hidden="true" tabindex="-1"></a><span class="fu"># Claudeの危険性</span></span>
+<span id="cb5-274"><a href="#cb5-274" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; {{&lt; meta date-modified &gt;}} 追記</span></span>
+<span id="cb5-275"><a href="#cb5-275" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-276"><a href="#cb5-276" aria-hidden="true" tabindex="-1"></a>Claudeは非常に高い安全性と推論能力を誇る一方、その「高度な自律性」や「開発元であるAnthropic社の運用」に起因する危険性が存在する。</span>
+<span id="cb5-277"><a href="#cb5-277" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-278"><a href="#cb5-278" aria-hidden="true" tabindex="-1"></a><span class="fu">## 実社会への誤攻撃リスク</span></span>
+<span id="cb5-279"><a href="#cb5-279" aria-hidden="true" tabindex="-1"></a>Anthropic社がClaudeのサイバーセキュリティ能力をテストしていた際、設定の不備により、本来遮断されているはずのインターネットにClaudeが接続できる状態になっていた。Claudeは「これはシミュレーション環境である」と指示されていたため、ネット上で見つけた実在する外部3組織の本番システムを「演習用ターゲット」だと誤認し、不正アクセスしてしまった^<span class="co">[</span><span class="ot">「[安全テストのつもりが本物を攻撃　Claudeはなぜ3社に侵入したのか - AI新聞](https://exawizards.com/column/ai-trend/news-08-01-2026-2/){target=&quot;_blank&quot;}」より。2026年10月8日閲覧。</span><span class="co">]</span> 。AI自身が「これはテストだ」と思い込んだまま、人間の想定を超えて現実のシステムに攻撃や侵入を行ってしまうという、自律型AIならではの制御不能リスクが浮き彫りとなった。</span>
+<span id="cb5-280"><a href="#cb5-280" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-281"><a href="#cb5-281" aria-hidden="true" tabindex="-1"></a><span class="fu">## システム破壊・資産流出</span></span>
+<span id="cb5-282"><a href="#cb5-282" aria-hidden="true" tabindex="-1"></a>海外のコミュニティサイト（<span class="co">[</span><span class="ot">DataTalks.Club</span><span class="co">](https://datatalks.club/)</span>{target=&quot;_blank&quot;}）の構築中、Claude Codeが同期エラーを起こした際、パニック状態のコマンド処理の末に本番環境のデータベース（10万人以上のユーザーデータ、2.5年分の蓄積）を丸ごと削除してしまう事故が発生した^<span class="co">[</span><span class="ot">「[AI「間違って全データを消してしまいました。申し訳ありません」 | ギズモード・ジャパン](https://www.gizmodo.jp/article/claude-powered-agent-apparently-deletes-company-database-debases-itself-further-in-confession/){target=&quot;_blank&quot;}」より。2026年10月8日閲覧。</span><span class="co">]</span> 。また、別のケースではログ経由でAPIトークンが漏洩し、数千万円規模の巨額損失に繋がったインシデントも報告されている^<span class="co">[</span><span class="ot">「[Claude Codeに情報流出の脆弱性　知らぬ間に認証情報を配布する開発者たち：13件に1件の割合でリスク - \@IT](https://atmarkit.itmedia.co.jp/ait/articles/2604/28/news037.html){target=&quot;_blank&quot;}」より。2026年10月8日閲覧。</span><span class="co">]</span> 。</span>
+<span id="cb5-283"><a href="#cb5-283" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-284"><a href="#cb5-284" aria-hidden="true" tabindex="-1"></a><span class="fu">## Claudeを利用する上で注意すること</span></span>
+<span id="cb5-285"><a href="#cb5-285" aria-hidden="true" tabindex="-1"></a>上記のような「AIがテストと本番を勘違いして外部へ侵入してしまう」「エラーでパニックになって全データを削除してしまう」といった事故は、ゼミで開発を行う私たちにとっても他人事ではない。特にClaude Codeはターミナル操作やファイル書き換えを自律して行うため、安全に活用するために以下のポイントを押さえておこう。</span>
+<span id="cb5-286"><a href="#cb5-286" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-287"><a href="#cb5-287" aria-hidden="true" tabindex="-1"></a>:::{.callout-important title=&quot;ゼミでのClaudeの利用における3大原則&quot;}</span>
+<span id="cb5-288"><a href="#cb5-288" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**本番・重要環境にAIを直接触らせない**: ローカル・Docker環境で動かし、作業前に必ずGitコミット・バックアップを取る</span>
+<span id="cb5-289"><a href="#cb5-289" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**コマンドと差分の目視確認**: 「Auto」に依存せず、実行コマンドや差分を人間が承認する</span>
+<span id="cb5-290"><a href="#cb5-290" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**認証情報・機密情報をAIの視界に入れない**: <span class="in">`.env`</span>等の機密ファイルを<span class="in">`.claudeignore`</span>で除外する</span>
+<span id="cb5-291"><a href="#cb5-291" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-292"><a href="#cb5-292" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-293"><a href="#cb5-293" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 1. 「Auto」で放置せず、コマンドや変更差分（diff）を確認する</span></span>
+<span id="cb5-294"><a href="#cb5-294" aria-hidden="true" tabindex="-1"></a>:::{style=&quot;margin-left: 2em;&quot;}</span>
+<span id="cb5-295"><a href="#cb5-295" aria-hidden="true" tabindex="-1"></a>「<span class="dt">&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;bi bi-lightning&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> Auto」実行は便利だが、エラー発生時にAIがパニックを起こして危険なコマンド（<span class="in">`rm -rf`</span>やテーブル削除など）を連打してしまう恐れがある。前述の通り基本は「{{&lt; iconify tabler hand-stop &gt;}} Manual」にしておき、**「どんなコマンドを実行しようとしているのか」「どこが書き換わるのか」を自分の目で確認してから許可する**ようにしたい。</span>
+<span id="cb5-296"><a href="#cb5-296" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-297"><a href="#cb5-297" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-298"><a href="#cb5-298" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 2. 本番環境に触らせない・Gitでいつでも戻せるようにする</span></span>
+<span id="cb5-299"><a href="#cb5-299" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**本番DBやサーバーに直接繋がない**: 開発やテストは必ず自分のPC（ローカル環境）やDocker上で行い、本番環境のデータベースや本番サーバーを直接操作させない。</span>
+<span id="cb5-300"><a href="#cb5-300" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**作業前にGitでコミットしておく**: AIに指示を出す前にコミットや作業ブランチ作成をしておけば、仮にファイルを無茶苦茶に破壊・削除されてもすぐに元に戻せる。</span>
+<span id="cb5-301"><a href="#cb5-301" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-302"><a href="#cb5-302" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 3. APIキーや個人情報を読み込ませない</span></span>
+<span id="cb5-303"><a href="#cb5-303" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**`.env`などの機密ファイルに注意**: APIキーやパスワードが書かれたファイルをClaudeに安易に読み込ませると、ログなどを通じて流出する危険がある。</span>
+<span id="cb5-304"><a href="#cb5-304" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**`.claudeignore`や`.gitignore`を設定する**: 秘密情報や大きなデータは、あらかじめAIの読み込み対象から除外しておく。また、クラウドサービスを使う場合は請求上限やアラートを設定しておくと安心である。</span>
+<span id="cb5-305"><a href="#cb5-305" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-306"><a href="#cb5-306" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 4. 外部のサイトやネットワークに勝手にアクセスさせない</span></span>
+<span id="cb5-307"><a href="#cb5-307" aria-hidden="true" tabindex="-1"></a>:::{style=&quot;margin-left: 2em;&quot;}</span>
+<span id="cb5-308"><a href="#cb5-308" aria-hidden="true" tabindex="-1"></a>スクレイピングやネットワーク通信のコードを動かす際、実在する外部サイトや学内ネットワークをターゲットにしてしまうと、不正アクセスやDoS攻撃とみなされる恐れがある。テスト時はモック（擬似データ）やローカルサーバー（<span class="in">`localhost`</span>）を使うように徹底したい。</span>
+<span id="cb5-309"><a href="#cb5-309" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-310"><a href="#cb5-310" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-311"><a href="#cb5-311" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 5. コードを理解せずに丸投げしない</span></span>
+<span id="cb5-312"><a href="#cb5-312" aria-hidden="true" tabindex="-1"></a>:::{style=&quot;margin-left: 2em;&quot;}</span>
+<span id="cb5-313"><a href="#cb5-313" aria-hidden="true" tabindex="-1"></a>Claudeが書いたコードを「よく分からないけれど動いたからヨシ」とそのまま使うのは危険である。セキュリティ上の問題がないか、なぜそのコードで動くのかを自分で説明できるようにすることが、システム開発を学ぶゼミ生としても大切である。</span>
+<span id="cb5-314"><a href="#cb5-314" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="コピー" class="code-copy-button" data-in-quarto-modal><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
